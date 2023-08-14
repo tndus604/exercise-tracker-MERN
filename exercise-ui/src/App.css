@@ -1,0 +1,188 @@
+
+
+/* ------------------------------------------------- */
+/* colors */
+/* ------------------------------------------------- */
+:root {
+  --red: #fb8072;
+  --green: #b3de69;
+  --yellow: #ffffb3;
+  --blue: #8dd3c7;
+  --purple: #bebada;
+  --orange: #fdb462;
+  --grey90: #0c0c0d;
+  --grey80: #2a2a2e;
+  --grey70: #38383d;
+  --grey60: #4a4a4f;
+  --grey50: #737373;
+  --grey40: #b1b1b3;
+  --grey30: #d7d7db;
+  --grey20: #ededf0;
+  --grey10: #f9f9fa;
+  --white100: #ffffff;
+}
+
+/* ------------------------------------------------- */
+/* body */
+/* ------------------------------------------------- */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #2a2a2e;
+  color: white;
+  margin: 5%;
+  padding: 5%;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+/* ------------------------------------------------- */
+/* footer */
+/* ------------------------------------------------- */
+footer {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.footer {
+  height: 8em;
+}
+
+/* ------------------------------------------------- */
+/* inverted link color */
+/* ------------------------------------------------- */
+/* #invertedColor {
+  background-color: lightblue;
+  color: var(--grey90);
+  border-radius: 8px;
+  padding: 8px;
+} */
+
+/* ------------------------------------------------- */
+/* table formatting */ 
+/* ------------------------------------------------- */
+table {
+  width: 100%;
+}
+
+caption {
+  font-size: 2em;
+  margin: 1em;
+}
+
+/* borders */
+table, th, td {
+  border: 1px solid lightgray;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 0.5em;
+}
+
+th {
+  background-color: lightcyan;
+  color: black;
+}
+
+tr:hover {
+  background-color: lightblue;
+  color: black;
+}
+
+
+/* ------------------------------------------------- */
+/* form */
+/* ------------------------------------------------- */
+
+fieldset, legend, label, input {
+  margin: 1em;
+  padding: 0.5em;
+  background-color: var(--grey60);
+  color: var(--white100);
+  border-color: var(--grey70);
+}
+
+label {
+  display: inline-block;
+  width: 200px;
+  text-align: right;
+}
+
+fieldset {
+  margin: auto;
+  margin-top: 3em;
+  width: 50%;
+}
+
+input, legend {
+  background-color: var(--grey70);
+}
+
+button {
+  margin: 1em;
+  padding-left: 2em;
+  padding-right: 2em;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  background-color: lightblue;
+  color: black;
+  font-size: 1em;
+  border-radius: 2rem;
+}
+
+button:hover {
+  background-color: lightskyblue;
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+select {
+  margin: 1em;
+}
+
+option {
+  margin: 6em;
+}
+
+/* ------------------------------------------------- */
+/* Headings */
+/* ------------------------------------------------- */
+
+h1, h2 {
+  color: white;
+}
+
+a {
+  color: lightblue;
+}
+
+a:visited {
+  color: purple;
+}
+
+/* ------------------------------------------------- */
+/* Icons */
+/* ------------------------------------------------- */
+.icon {
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+}
+
+.icon:hover {
+  cursor: pointer;
+}
+
+/* ----------------------------------------------------------------------------
+* From initial creation of react app
+* ---------------------------------------------------------------------------*/
+
+.App {
+  text-align: center;
+}
