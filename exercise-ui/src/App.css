@@ -86,7 +86,7 @@ th, td {
 }
 
 th {
-  background-color: lightcyan;
+  background-color: darkgray;
   color: black;
 }
 
@@ -103,15 +103,15 @@ tr:hover {
 fieldset, legend, label, input {
   margin: 1em;
   padding: 0.5em;
-  background-color: var(--grey60);
-  color: var(--white100);
-  border-color: var(--grey70);
+  color: white;
 }
 
 label {
   display: inline-block;
+  background-color: #2a2a2e;
   width: 200px;
-  text-align: right;
+  text-align: left;
+  border-bottom: 2px lightblue solid;
 }
 
 fieldset {
@@ -121,7 +121,8 @@ fieldset {
 }
 
 input, legend {
-  background-color: var(--grey70);
+  background-color: #2a2a2e;
+  width: 200px;
 }
 
 button {
@@ -176,6 +177,7 @@ a:visited {
 }
 
 .icon:hover {
+  color: red;
   cursor: pointer;
 }
 

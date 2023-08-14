@@ -1,3 +1,4 @@
+import React from 'react';
 import { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import moment from 'moment';
@@ -6,16 +7,12 @@ function CreateExercisePage() {
 
   const history = useHistory();
 
-  // Variables which are initialized to empty string and updated by form below
   const [name, setName] = useState('');
   const [reps, setReps] = useState('');
   const [weight, setWeight] = useState('');
   const [unit, setUnit] = useState('');
   const [date, setDate] = useState('');
 
-  //----------------------------------------------------------------------------
-  // Make a POST request to create a new exercise
-  //----------------------------------------------------------------------------
   const addExercise = async () => {
     // Create new object with the variables set in the form
     const newExercise = {name, reps, weight, unit, date};
@@ -73,7 +70,7 @@ function CreateExercisePage() {
           <label for="unit">Unit</label> 
           <input id="unit"
             type="text"
-            placeholder="lb or kg"
+            placeholder="lbs or kgs"
             value={unit}
             onChange={e => setUnit(e.target.value)}
           /> <br/>
