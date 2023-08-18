@@ -30,10 +30,13 @@ const exerciseSchema = mongoose.Schema({
  */
 const Exercise = mongoose.model("Exercise", exerciseSchema);
 
+
+
 const createExercise = async (name, reps, weight, unit, date) => {
     // Call the constructor to create an instance of the model class User
     const exercise = new Exercise({ name: name, reps: reps, weight: weight, unit: unit, date: date });
     // Call save to persist this object as a document in MongoDB
+
     return exercise.save();
 }
 
@@ -56,9 +59,9 @@ const replaceExercise = async (_id, name, reps, weight, unit, date) => {
     );
 
     if (updatedExercise) {
-        return 1; // If a movie was updated, return 1 to indicate success.
+        return 1; 
     } else {
-        return 0; // If no movie was found with the given _id, return 0 to indicate failure.
+        return 0; 
     }
 }
 

@@ -14,7 +14,7 @@ function CreateExercisePage() {
   const [date, setDate] = useState('');
 
   const addExercise = async () => {
-    // Create new object with the variables set in the form
+
     const newExercise = {name, reps, weight, unit, date};
 
     try {
@@ -25,19 +25,24 @@ function CreateExercisePage() {
           'Content-Type': 'application/json'
         }
       });
+      if (response.ok) {
+        alert("Successfully added.");
+      } else {
+        throw new Error(`Failed to add exercise. Status: ${response.status}`);
+      }
     } catch (error) {
       console.error("Fetch error:", error);
-      alert("An error occurred while making the request. Check the console for more details.");
+      alert("An error occurred while making the request. Please type in valid input.");
     }
-    // return to the homepage
+
     history.push('/');
   }
 
-  const formattedDate = moment().format('MM-D-YYYY');
+  const formattedDate = moment().format('MM-DD-YY');
 
   return (
     <div>
-      <h1>Create an Exercise</h1>
+      <h2>Create an Exercise</h2>
 
         <fieldset>
 
@@ -68,12 +73,12 @@ function CreateExercisePage() {
           /> <br/>
 
           <label for="unit">Unit</label> 
-          <input id="unit"
-            type="text"
-            placeholder="lbs or kgs"
-            value={unit}
-            onChange={e => setUnit(e.target.value)}
-          /> <br/>
+          <select id="unit" name="unit" value={unit} onChange={e => setUnit(e.target.value)}>
+              <option value="" disabled selected hidden>Please Choose...</option>
+              <option value="lbs">lbs</option>
+              <option value="kgs">kgs</option>
+          </select>
+          <br/>
 
 
           <label for="date">Date</label> 

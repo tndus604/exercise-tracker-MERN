@@ -6,20 +6,13 @@ function EditExercisePage({ exerciseToEdit }) {
 
   const history = useHistory();
 
-  // Variables which are initialized to current values of the exercise object,
-  // but get updated by the form.
   const [name, setName] = useState(exerciseToEdit.name);
   const [reps, setReps] = useState(exerciseToEdit.reps);
   const [weight, setWeight] = useState(exerciseToEdit.weight);
   const [unit, setUnit] = useState(exerciseToEdit.unit);
   const [date, setDate] = useState(exerciseToEdit.date);
 
-  //----------------------------------------------------------------------------
-  // Make a PUT request to update the exercise with updatedExercise
-  //----------------------------------------------------------------------------
   const editExercise = async () => {
-    // Build a new updatedExercise object out of the state variables that have
-    // been submitted through the form below
     const updatedExercise = {name, reps, weight, unit, date};
 
     const response = await fetch(`/exercises/${exerciseToEdit._id}`, {
@@ -31,7 +24,7 @@ function EditExercisePage({ exerciseToEdit }) {
     });
 
     if (response.status === 200) {
-      alert("Exercise has been edited!");
+      alert("Successfully edited.");
     } else {
       alert(`Failed to edit exercise, status code = ${response.status}`);
     }
@@ -40,10 +33,9 @@ function EditExercisePage({ exerciseToEdit }) {
 
   return (
     <div>
-      <h1>Edit a Exercise</h1>
+      <h2>Edit a Exercise</h2>
 
         <fieldset>
-
           <label for="name">Exercise Name</label> 
           <input id="name"
             type="text"
@@ -68,20 +60,21 @@ function EditExercisePage({ exerciseToEdit }) {
             placeholder="210"
             value={weight}
             onChange={e => setWeight(e.target.value)}
-          /> <br/>
+          /> 
+          <br/>
 
           <label for="unit">Unit</label> 
-          <input id="unit"
-            type="text"
-            placeholder="lbs/kgs"
-            value={unit}
-            onChange={e => setUnit(e.target.value)}
-          /> <br/>
+          <select id="unit" name="unit" value={unit} onChange={e => setUnit(e.target.value)}>
+              <option value="" disabled selected hidden>Please Choose...</option>
+              <option value="lbs" selected="selected">lbs</option>
+              <option value="kgs">kgs</option>
+          </select>
+          <br/>
 
           <label for="date">Date</label> 
           <input id="date"
             type="text"
-            placeholder="08-13-2021"
+            placeholder="08-13-2023"
             value={date}
             onChange={e => setDate(e.target.value)}
           /> <br/>
