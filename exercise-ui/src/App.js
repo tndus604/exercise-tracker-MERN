@@ -5,6 +5,7 @@ import EditExercisePage from './pages/EditExercisePage.js'
 import { BrowserRouter as Router, Route} from 'react-router-dom';
 import { useState } from 'react';
 import Navigation from './components/Navigation';
+import { useEffect, useState } from "react";
 
 function App() {
   const [exerciseToEdit, setExerciseToEdit] = useState();
