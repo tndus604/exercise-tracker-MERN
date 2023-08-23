@@ -8,6 +8,13 @@ import Navigation from './components/Navigation';
 
 function App() {
   const [exerciseToEdit, setExerciseToEdit] = useState();
+  const [message, setMessage] = useState("");
+
+  useEffect(() => {
+    fetch("https://exercise-tracker-xd43.onrender.com")
+      .then((res) => res.json())
+      .then((data) => setMessage(data.message));
+  },[]);
 
   return (
     <div className="App">
