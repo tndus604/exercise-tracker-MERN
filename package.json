@@ -1,0 +1,24 @@
+{
+  "name": "exercise-tracker-mern-stack",
+  "version": "1.0.0",
+  "description": "A simple web app using [MongoDB], [Express], [React], and [Node.js] to do CRUD operations.",
+  "main": "index.js",
+  "scripts": {
+    "install-server": "cd exercise-rest && npm install",
+    "start-server": "cd exercise-rest && npm start",
+    "install-client": "cd exercise-ui && npm install",
+    "build-client": "cd exercise-ui && npm run build",
+    "start-client": "cd exercise-ui && npm start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tndus604/exercise-tracker-mern-stack.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tndus604/exercise-tracker-mern-stack/issues"
+  },
+  "homepage": "https://github.com/tndus604/exercise-tracker-mern-stack#readme"
+}
