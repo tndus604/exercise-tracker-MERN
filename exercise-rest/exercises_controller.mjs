@@ -2,15 +2,19 @@ import 'dotenv/config';
 import * as exercises from './exercises_model.mjs';
 import express from 'express';
 import moment from 'moment';
-
-const path = __dirname + '/build/';
+import path from 'path';
+import { fileURLToPath } from 'url';
 
 const PORT = process.env.PORT;
 
 const app = express();
 
+const __filename = fileURLToPath(import.meta.url);
+
+const __dirname = path.dirname(__filename);
+
 app.use(express.json());
-app.use(express.static(path));
+app.use('/static', express.static(path.join(__dirname, 'build')))
 
 function validateDate(date) {
     return moment(date, 'MM-DD-YY', true).isValid();
