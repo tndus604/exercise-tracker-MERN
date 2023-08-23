@@ -3,11 +3,13 @@ import * as exercises from './exercises_model.mjs';
 import express from 'express';
 import moment from 'moment';
 
+const path = __dirname + '/build/';
+
 const PORT = process.env.PORT;
 
 const app = express();
 
-app.use(express.json());
+app.use(express.json.static(path));
 
 function validateDate(date) {
     return moment(date, 'MM-DD-YY', true).isValid();
@@ -54,6 +56,9 @@ app.post('/exercises', (req, res) => {
         });
 });
 
+app.get('/', function (req, res) {
+    res.sendFile(path + "index.html");
+})
 
 app.get('/exercises/:_id', (req, res) => {
     const exerciseId = req.params._id;
