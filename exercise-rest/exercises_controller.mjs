@@ -9,7 +9,8 @@ const PORT = process.env.PORT;
 
 const app = express();
 
-app.use(express.json.static(path));
+app.use(express.json());
+app.use(express.static(path));
 
 function validateDate(date) {
     return moment(date, 'MM-DD-YY', true).isValid();
