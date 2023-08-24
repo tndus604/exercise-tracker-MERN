@@ -5,7 +5,8 @@
   "main": "exercises_controller.mjs",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon exercises_controller.mjs"
+    "start": "nodemon exercises_controller.mjs",
+    "build": "webpack --config=Scripts/config/webpack.prod.js"
   },
   "author": "",
   "license": "ISC",
