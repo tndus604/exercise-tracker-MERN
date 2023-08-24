@@ -4,17 +4,10 @@ import CreateExercisePage from './pages/CreateExercisePage.js'
 import EditExercisePage from './pages/EditExercisePage.js'
 import { BrowserRouter as Router, Route} from 'react-router-dom';
 import Navigation from './components/Navigation';
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 function App() {
   const [exerciseToEdit, setExerciseToEdit] = useState();
-  const [message, setMessage] = useState("");
-
-  useEffect(() => {
-    fetch("https://exercise-tracker-xd43.onrender.com")
-      .then((res) => res.json())
-      .then((data) => setMessage(data.message));
-  },[]);
 
   return (
     <div className="App">
