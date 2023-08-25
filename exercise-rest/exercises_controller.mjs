@@ -2,13 +2,17 @@ import 'dotenv/config';
 import * as exercises from './exercises_model.mjs';
 import express from 'express';
 import moment from 'moment';
+import cors from 'cors';
 
 const PORT = process.env.PORT;
 
 const app = express();
 
-
 app.use(express.json());
+app.use(cors({
+    origin: 'https://exercise-tracker-frontend-9yy2.onrender.com/',
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE', // Specify the allowed HTTP methods
+  }));
 
 function validateDate(date) {
     return moment(date, 'MM-DD-YY', true).isValid();
