@@ -36,11 +36,13 @@ function HomePage({ setExerciseToEdit }) {
     }
 
     const response = await fetch(`/exercises/${_id}`, {method: 'DELETE'});
-    if (response.status === 200 || response.status === 204) {
+    if (response.ok) {
       setExercises(exercises.filter(e => e._id !== _id));
+      console.log(`Exercise with _id ${_id} deleted successfully`);
     } else {
       console.error(`Failed to delete exercise with _id ${_id} with status code = ${response.status}`)
     }
+    history.push('/')
   };
 
   return (
