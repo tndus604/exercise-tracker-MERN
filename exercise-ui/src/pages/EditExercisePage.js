@@ -23,7 +23,7 @@ function EditExercisePage({ exerciseToEdit }) {
       }
     });
 
-    if (response.ok) {
+    if (response.status === 200) {
       alert("Successfully edited.");
     } else {
       alert(`Failed to edit exercise, status code = ${response.status}`);
