@@ -2,17 +2,18 @@ import 'dotenv/config';
 import * as exercises from './exercises_model.mjs';
 import express from 'express';
 import moment from 'moment';
-import cors from 'cors';
 
 const PORT = process.env.PORT;
 
 const app = express();
 
 app.use(express.json());
-app.use(cors({
-    origin: 'https://exercise-tracker-frontend-9yy2.onrender.com/',
-    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE', // Specify the allowed HTTP methods
-  }));
+app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', 'https://exercise-tracker-frontend-9yy2.onrender.com'); // Correct the value here
+    res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+    res.header('Access-Control-Allow-Headers', 'Content-Type');
+    next();
+  });
 
 function validateDate(date) {
     return moment(date, 'MM-DD-YY', true).isValid();
