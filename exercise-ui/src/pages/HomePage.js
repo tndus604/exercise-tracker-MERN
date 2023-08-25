@@ -12,8 +12,7 @@ function HomePage({ setExerciseToEdit }) {
 
   const loadExercises = async () => {
     try {
-      const proxyUrl = process.env.REACT_APP_PROXY;
-      const response = await fetch(`${proxyUrl}/exercises`);
+      const response = await fetch('/exercises');
       const data = await response.json();
       setExercises(data);
     } catch (error) {
@@ -36,7 +35,7 @@ function HomePage({ setExerciseToEdit }) {
       return
     }
 
-    const response = await fetch(`${proxyUrl}/exercises/${_id}`, {method: 'DELETE'});
+    const response = await fetch(`/exercises/${_id}`, {method: 'DELETE'});
     if (response.status === 204) {
       setExercises(exercises.filter(e => e._id !== _id));
     } else {

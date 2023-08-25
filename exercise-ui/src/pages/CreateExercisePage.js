@@ -18,8 +18,7 @@ function CreateExercisePage() {
     const newExercise = {name, reps, weight, unit, date};
 
     try {
-      const proxyUrl = process.env.REACT_APP_PROXY;
-      const response = await fetch(`${proxyUrl}/exercises`, {
+      const response = await fetch('/exercises', {
         method: 'POST',
         body: JSON.stringify(newExercise),
         headers: {
