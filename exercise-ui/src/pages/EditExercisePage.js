@@ -15,7 +15,8 @@ function EditExercisePage({ exerciseToEdit }) {
   const editExercise = async () => {
     const updatedExercise = {name, reps, weight, unit, date};
 
-    const response = await fetch(`/exercises/${exerciseToEdit._id}`, {
+    const proxyUrl = process.env.REACT_APP_PROXY;
+    const response = await fetch(`${proxyUrl}/exercises/${exerciseToEdit._id}`, {
       method: 'PUT',
       body: JSON.stringify(updatedExercise),
       headers: {
