@@ -133,19 +133,18 @@ app.put('/exercises/:_id', (req, res) => {
 });
 
 
-app.delete('/exercises/:_id', (req, res) => {
-    exercises.deleteById(req.params._id)
-        .then(deletedCount => {
-            if (deletedCount === 1) {
-                res.status(204).send();
-            } else {
-                res.status(404).json({ Error: 'Resource not found' });
-            }
-        })
-        .catch(error => {
-            console.error(error);
-            res.send({ error: 'Request failed' });
-        });
+app.delete('/exercises/:_id', async (req, res) => {
+    try {
+        const deletedCount = await exercises.deleteById(req.params._id);
+        if (deletedCount === 1) {
+            res.status(204).send(); // Respond with a 204 status code
+        } else {
+            res.status(404).json({ Error: 'Resource not found' });
+        }
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ error: 'Request failed' });
+    }
 });
 
 app.listen(PORT, () => {
