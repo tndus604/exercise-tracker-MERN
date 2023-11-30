@@ -8,7 +8,8 @@
     "start-server": "cd exercise-rest && npm start",
     "install-client": "cd exercise-ui && npm install",
     "build-client": "cd exercise-ui && npm run build",
-    "start-client": "cd exercise-ui && npm start"
+    "start-client": "cd exercise-ui && npm start",
+    "start": "npm run install-server && npm run start-server & npm run install-client && npm run start-client"
   },
   "repository": {
     "type": "git",
