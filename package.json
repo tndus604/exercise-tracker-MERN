@@ -9,7 +9,7 @@
     "install-client": "cd exercise-ui && npm install",
     "build-client": "cd exercise-ui && npm run build",
     "start-client": "cd exercise-ui && npm start",
-    "start": "npm run install-server && npm run install-client && concurrently \"npm run start-server\" \"npm run start-client\""
+    "start": "concurrently \"npm run start-server\" \"npm run start-client\""
   },
   "repository": {
     "type": "git",
